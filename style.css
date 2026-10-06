@@ -7,13 +7,26 @@ h1,h2,h3,.logo,.loader-count{font-family:"Bricolage Grotesque",system-ui,sans-se
 body.loading{overflow:hidden}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 
-/* Loader */
-#loader{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(1.5rem,5vw,4rem);gap:1.5rem;transition:transform .8s cubic-bezier(.77,0,.18,1)}
+/* Loader: HUD that assembles itself */
+#loader{position:fixed;inset:0;z-index:100;background:#050a14;color:#5ee7ff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:transform .8s cubic-bezier(.77,0,.18,1)}
 #loader.done{transform:translateY(-100%)}
-.loader-count{font-size:clamp(5rem,22vw,16rem);font-weight:800;letter-spacing:-.04em}
-.loader-count small{font-size:.3em;color:var(--accent)}
-.loader-track{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
-#loader-bar{height:100%;width:0;background:var(--accent)}
+#rig{width:min(60vw,300px);overflow:visible}
+.ring{fill:none;stroke:#5ee7ff;stroke-width:3;stroke-dasharray:100;stroke-dashoffset:100;transform:rotate(-90deg);transform-origin:110px 110px;filter:drop-shadow(0 0 4px #5ee7ff)}
+.r2{stroke-width:6;stroke:#2d8cff}
+.r3{stroke-width:2}
+.seg{stroke:#5ee7ff;stroke-width:5;opacity:0;transition:opacity .25s,transform .4s}
+.seg.on{opacity:1}
+#tri{fill:none;stroke:#5ee7ff;stroke-width:2;opacity:0;transition:opacity .4s}
+#core{fill:#fff;opacity:0;filter:drop-shadow(0 0 12px #5ee7ff);transition:opacity .3s}
+#loader.ready #core{animation:pulse 1.2s ease-in-out infinite}
+#segs{transform-origin:110px 110px;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{opacity:.55}}
+.loader-count{font-size:clamp(2.5rem,9vw,4.5rem);font-weight:800;color:#fff}
+.loader-count small{font-size:.4em;color:#5ee7ff}
+#status{font:.9rem/1 ui-monospace,monospace;letter-spacing:.15em;text-transform:uppercase;min-height:1em}
+.loader-track{width:min(60vw,300px);height:3px;background:#12203a}
+#loader-bar{height:100%;width:0;background:#5ee7ff;box-shadow:0 0 8px #5ee7ff}
 
 /* Scroll progress */
 #scroll-progress{position:fixed;top:0;left:0;height:4px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;z-index:60}
