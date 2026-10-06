@@ -6,21 +6,26 @@
 <title>Build in progress</title>
 <meta name="description" content="This site is being built. Check back soon.">
 <style>
-:root{--bg:#f4f6fa;--ink:#16213a;--accent:#2d4bff}
-@media (prefers-color-scheme:dark){:root{--bg:#0e1424;--ink:#eef1f8;--accent:#7c93ff}}
+:root{--bg:#f4f6fa;--ink:#16213a;--a:#2d4bff;--b:#16213a}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1424;--ink:#eef1f8;--a:#7c93ff;--b:#eef1f8}}
 *{margin:0;box-sizing:border-box}
 html,body{height:100%}
 body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;background:var(--bg);color:var(--ink);font:1.1rem/1.5 system-ui,sans-serif;text-align:center;padding:1.5rem}
-svg{width:min(34vw,140px);height:auto;color:var(--accent);animation:spin 2.4s linear infinite}
+svg{width:min(70vw,320px);height:auto;overflow:visible}
+.g{transform-box:fill-box;transform-origin:center;fill-rule:evenodd}
+.g1{fill:var(--a);animation:cw 6s linear infinite}
+.g2{fill:var(--b);animation:ccw 4s linear infinite}
+@keyframes cw{to{transform:rotate(360deg)}}
+@keyframes ccw{to{transform:rotate(-360deg)}}
 h1{font-size:clamp(1.6rem,5vw,2.4rem)}
 p{opacity:.7}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){svg{animation-duration:12s}}
+@media (prefers-reduced-motion:reduce){.g{animation-duration:30s}}
 </style>
 </head>
 <body>
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Spanner rotating">
-  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+<svg viewBox="-36 -36 122 72" role="img" aria-label="Two gears turning">
+  <g transform="translate(0 0)"><path class="g g1" d="M26.3 2.8 L32.5 5.7 L31.0 11.3 L24.1 10.7 L21.4 15.5 L25.3 21.2 L21.2 25.3 L15.5 21.4 L10.7 24.1 L11.3 31.0 L5.7 32.5 L2.8 26.3 L-2.8 26.3 L-5.7 32.5 L-11.3 31.0 L-10.7 24.1 L-15.5 21.4 L-21.2 25.3 L-25.3 21.2 L-21.4 15.5 L-24.1 10.7 L-31.0 11.3 L-32.5 5.7 L-26.3 2.8 L-26.3 -2.8 L-32.5 -5.7 L-31.0 -11.3 L-24.1 -10.7 L-21.4 -15.5 L-25.3 -21.2 L-21.2 -25.3 L-15.5 -21.4 L-10.7 -24.1 L-11.3 -31.0 L-5.7 -32.5 L-2.8 -26.3 L2.8 -26.3 L5.7 -32.5 L11.3 -31.0 L10.7 -24.1 L15.5 -21.4 L21.2 -25.3 L25.3 -21.2 L21.4 -15.5 L24.1 -10.7 L31.0 -11.3 L32.5 -5.7 L26.3 -2.8Z M9 0 a9 9 0 1 0 -18 0 a9 9 0 1 0 18 0Z"/></g>
+  <g transform="translate(50 0)"><path class="g g2" d="M15.9 -3.8 L22.8 -3.1 L22.8 3.1 L15.9 3.8 L14.0 8.6 L18.3 14.0 L14.0 18.3 L8.6 14.0 L3.8 15.9 L3.1 22.8 L-3.1 22.8 L-3.8 15.9 L-8.6 14.0 L-14.0 18.3 L-18.3 14.0 L-14.0 8.6 L-15.9 3.8 L-22.8 3.1 L-22.8 -3.1 L-15.9 -3.8 L-14.0 -8.6 L-18.3 -14.0 L-14.0 -18.3 L-8.6 -14.0 L-3.8 -15.9 L-3.1 -22.8 L3.1 -22.8 L3.8 -15.9 L8.6 -14.0 L14.0 -18.3 L18.3 -14.0 L14.0 -8.6Z M7 0 a7 7 0 1 0 -14 0 a7 7 0 1 0 14 0Z"/></g>
 </svg>
 <h1>Build in progress</h1>
 <p>We're working on it. Check back soon.</p>
